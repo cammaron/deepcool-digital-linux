@@ -374,13 +374,13 @@ impl Display {
             // 2-digit number
             dot_matrix::insert_pattern(matrix, dot_matrix::get_number_pattern((value / 10) as u8), row_id, 1);
             dot_matrix::insert_pattern(matrix, dot_matrix::get_number_pattern((value % 10) as u8), row_id, 5);
-            dot_matrix::insert_pattern(matrix, unit.get_pattern(), 5, 9);
+            dot_matrix::insert_pattern(matrix, unit.get_pattern(), row_id, 9);
         } else {
             // 3-digit number
             dot_matrix::insert_pattern(matrix, dot_matrix::get_number_pattern((value / 100) as u8), row_id, 1);
             dot_matrix::insert_pattern(matrix, dot_matrix::get_number_pattern((value % 100 / 10) as u8), row_id, 5);
             dot_matrix::insert_pattern(matrix, dot_matrix::get_number_pattern((value % 10) as u8), row_id, 9);
-            dot_matrix::insert_pattern(matrix, unit.get_pattern(), 5, 13);
+            dot_matrix::insert_pattern(matrix, unit.get_pattern(), row_id, 13);
         }
     }
 }
